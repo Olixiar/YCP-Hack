@@ -4,8 +4,11 @@ Here's our first attempt at using data to create a table:
 """
 
 import streamlit as st
+from config import apply_page_config, hide_default_sidebar
 
-st.set_page_config(initial_sidebar_state="collapsed")
+# Apply page configuration and hide the sidebar
+apply_page_config()
+hide_default_sidebar()
 
 info = ("Hi")
 
@@ -13,17 +16,3 @@ if st.button("Sign Up"):
     st.switch_page("pages/meet.py")
 
 info
-
-
-
-st.markdown(
-    """
-    <style>
-    /* Hide the multipage app sidebar */
-    [data-testid="stAppViewContainer"] > div:first-child {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
