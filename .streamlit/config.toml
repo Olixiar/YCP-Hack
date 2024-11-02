@@ -1,0 +1,7 @@
+[theme]
+primaryColor = "#348338"
+backgroundColor = "#EBF4F7"
+
+# Remove Streamlit’s sidebar
+[global]
+disable_watchdog_warning = true
