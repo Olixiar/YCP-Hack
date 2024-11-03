@@ -4,9 +4,6 @@ Here's our first attempt at using data to create a table:
 """
 
 import streamlit as st
-from config import apply_page_config, hide_default_sidebar
-
-# Apply page configuration and hide the sidebar
 
 # --- PAGE SETUP ---
 home = st.Page(
@@ -20,15 +17,15 @@ meet = st.Page(
     title="Meet",
     icon=":material/groups:",
 )
-sign_in = st.Page(
-    "pages/sign_up.py",
-    title="Sign Up",
-    icon=":material/login:",
+chatbot = st.Page(
+    "pages/YCP_Bot.py",
+    title="YCP Bot",
+    icon=":material/robot_2:",
 )
-sign_up = st.Page(
+sign_in = st.Page(
     "pages/sign_in.py",
     title="Sign In",
-    icon=":material/how_to_reg:",
+    icon=":material/login:",
 )
 account = st.Page(
     "pages/account.py",
@@ -43,7 +40,9 @@ account = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Navigation": [home, meet],
-        "Account Manegment": [account, sign_in, sign_up],
+        "Navigation": [home, meet, chatbot],
+        "Account": [account, sign_in],
     }
 )
+
+pg.run()
