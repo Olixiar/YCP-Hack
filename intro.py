@@ -1,49 +1,37 @@
-"""
 # My first app
+"""
 Here's our first attempt at using data to create a table:
 """
 
+import os
 import streamlit as st
-from config import apply_page_config, hide_default_sidebar
+
+# Load environment variables
+AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
+AUTH0_CLIENT_ID = os.getenv("AUTH0_CLIENT_ID")
+AUTH0_CALLBACK_URL = os.getenv("AUTH0_CALLBACK_URL")
 
 # Apply page configuration and hide the sidebar
+st.set_page_config(initial_sidebar_state="collapsed")
 
-# --- PAGE SETUP ---
-home = st.Page(
-    "pages/home.py",
-    title="Home",
-    icon=":material/cottage:",
-    default=True,
-)
-meet = st.Page(
-    "pages/meet.py",
-    title="Meet",
-    icon=":material/groups:",
-)
-sign_in = st.Page(
-    "pages/sign_up.py",
-    title="Sign Up",
-    icon=":material/login:",
-)
-sign_up = st.Page(
-    "pages/sign_in.py",
-    title="Sign In",
-    icon=":material/how_to_reg:",
-)
-account = st.Page(
-    "pages/account.py",
-    title="Account",
-    icon=":material/account_circle:",
-)
+def sign_in():
+    # Construct the Auth0 login URL
+    login_url = f"https://{AUTH0_DOMAIN}/authorize?response_type=token&client_id={AUTH0_CLIENT_ID}&redirect_uri={AUTH0_CALLBACK_URL}&scope=openid profile email"
+    
+    # Create a button to log in
+    if st.button("Sign In"):
+        # Redirect to Auth0 login page
+        st.markdown(f'<meta http-equiv="refresh" content="0; url={login_url}" />', unsafe_allow_html=True)
 
+def log_out():
+    # Construct the Auth0 logout URL
+    logout_url = f"https://{AUTH0_DOMAIN}/v2/logout?client_id={AUTH0_CLIENT_ID}&returnTo={AUTH0_CALLBACK_URL}"
+    
+    # Create a button to log out
+    if st.button("Log Out"):
+        # Redirect to Auth0 logout page
+        st.markdown(f'<meta http-equiv="refresh" content="0; url={logout_url}" />', unsafe_allow_html=True)
 
-# --- NAVIGATION SETUP [WITHOUT SECTIONS] ---
-# pg = st.navigation(pages=[about_page, project_1_page, project_2_page])
-
-# --- NAVIGATION SETUP [WITH SECTIONS]---
-pg = st.navigation(
-    {
-        "Navigation": [home, meet],
-        "Account Manegment": [account, sign_in, sign_up],
-    }
-)
+# Call the sign_in and log_out functions
+sign_in()
+log_out()
