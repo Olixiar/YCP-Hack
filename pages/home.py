@@ -13,6 +13,8 @@ import os
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
 AUTH0_CLIENT_ID = os.getenv("AUTH0_CLIENT_ID")
 AUTH0_CALLBACK_URL = os.getenv("AUTH0_CALLBACK_URL")
+SUPABASE_URL = "https://awlnmyhowvrfcravqihl.supabase.co/"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3bG5teWhvd3ZyZmNyYXZxaWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA1Nzc3NDEsImV4cCI6MjA0NjE1Mzc0MX0.B8crTyUGLAjK1r-lzmLZezdExm2LTUmd7i54cYogGKQ"
 
 st.image("./assets/cover.png", width=1425)
 
@@ -49,8 +51,6 @@ if current_value and "access_token=" in current_value:
     st.session_state.jwt = token
 
     
-    SUPABASE_URL = "https://awlnmyhowvrfcravqihl.supabase.co"
-    SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3bG5teWhvd3ZyZmNyYXZxaWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA1Nzc3NDEsImV4cCI6MjA0NjE1Mzc0MX0.B8crTyUGLAjK1r-lzmLZezdExm2LTUmd7i54cYogGKQ"
     supabase_client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
     def get_user_info(token):
@@ -61,8 +61,8 @@ if current_value and "access_token=" in current_value:
         response = requests.get(url, headers=headers)
         
         # Debugging output
-        st.write("User Info Response Code:", response.status_code)
-        st.write("User Info Response Body:", response.json())
+        #st.write("User Info Response Code:", response.status_code)
+        #st.write("User Info Response Body:", response.json())
 
 
         if response.status_code == 200:
@@ -82,7 +82,7 @@ if current_value and "access_token=" in current_value:
         .eq("uid", jasonlol["sub"])
         .execute()
     )
-    st.write(responseCheck)
+    #st.write(responseCheck)
     
     if (responseCheck.data == []):
         response = (

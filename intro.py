@@ -45,7 +45,7 @@ account = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Navigation": [home, meet, chatbot],
+        "Navigation": [home, meet, partners, chatbot],
         "Account": [account, sign_in],
     }
 )
