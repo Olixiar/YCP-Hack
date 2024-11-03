@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("YCP Bot")
+st.markdown("<h1 style='color: darkgreen;'>YCP Bot</h1>", unsafe_allow_html=True)
 
 import streamlit as st
 import requests
@@ -65,4 +65,4 @@ if token and isinstance(token, str) and token.strip():
     else:
         st.write("Failed to retrieve user information.")
 else:
-    st.write("Make an account in order to use this feature!")
+    st.write("Make an account or login in order to use this feature!")

@@ -1,6 +1,6 @@
-# ycPartnerWith.us
+# YCPartnerWith.us
 
-ycPartnerWith.us is a web application designed to facilitate collaboration between prospective partners, students, and staff of York College. It allows users to create posts and identify themselves to other users who may be interested in partnerships and collaborations. 
+YCPartnerWith.us is a web application designed to facilitate collaboration between prospective partners, students, and staff of York College. It allows users to create posts and identify themselves to other users who may be interested in partnerships and collaborations. 
 
 ## Features
 
@@ -16,6 +16,7 @@ ycPartnerWith.us is a web application designed to facilitate collaboration betwe
 - **Backend**: Supabase
 - **Authentication**: Auth0
 - **Domain Name**: GoDaddy
+- **Generative AI**: ChatGPT
 
 
 ## Authors

@@ -15,6 +15,8 @@ SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJ
 supabase_client: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
+st.markdown("<h1 style='color: darkgreen;'>Account Information</h1>", unsafe_allow_html=True)
+
 # Function to get user info from Auth0
 def get_user_info(token):
     url = f"https://{AUTH0_DOMAIN}/userinfo"
@@ -73,8 +75,6 @@ def submit_profile_page():
             st.error("Please fill in all fields before submitting.")
 
 
-st.write("Account Information")
-
 # Get token from session state
 token = st.session_state.get('jwt')
 
@@ -90,4 +90,4 @@ if token and isinstance(token, str) and token.strip():
     else:
         st.write("Failed to retrieve user information.")
 else:
-    st.write("Make an account!")
+    st.write("Make an account or login in order to use this feature!")
