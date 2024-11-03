@@ -8,7 +8,7 @@ from supabase import create_client
 load_dotenv()
 SUPABASE_URL = "https://awlnmyhowvrfcravqihl.supabase.co/"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3bG5teWhvd3ZyZmNyYXZxaWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA1Nzc3NDEsImV4cCI6MjA0NjE1Mzc0MX0.B8crTyUGLAjK1r-lzmLZezdExm2LTUmd7i54cYogGKQ"
-AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
+AUTH0_DOMAIN = st.secrets["AUTH0_DOMAIN"]
 supabase_client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Function to retrieve user info from Auth0

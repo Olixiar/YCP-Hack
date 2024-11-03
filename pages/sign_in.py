@@ -9,9 +9,9 @@ import streamlit as st
 from supabase import create_client, Client
 
 # Load environment variables
-AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
-AUTH0_CLIENT_ID = os.getenv("AUTH0_CLIENT_ID")
-AUTH0_CALLBACK_URL = os.getenv("AUTH0_CALLBACK_URL")
+AUTH0_DOMAIN = st.secrets["AUTH0_DOMAIN"]
+AUTH0_CLIENT_ID = st.secrets["AUTH0_CLIENT_ID"]
+AUTH0_CALLBACK_URL = st.secrets["AUTH0_CALLBACK_URL"]
 
 # Apply page configuration and hide the sidebar
 st.set_page_config(initial_sidebar_state="collapsed")

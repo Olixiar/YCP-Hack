@@ -7,9 +7,9 @@ import streamlit as st
 import requests
 import os
 # Environment Variables
-AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
-AUTH0_CLIENT_ID = os.getenv("AUTH0_CLIENT_ID")
-AUTH0_CALLBACK_URL = os.getenv("AUTH0_CALLBACK_URL")
+AUTH0_DOMAIN = st.secrets["AUTH0_DOMAIN"]
+AUTH0_CLIENT_ID = st.secrets["AUTH0_CLIENT_ID"]
+AUTH0_CALLBACK_URL = st.secrets["AUTH0_CALLBACK_URL"]
 # Function to get user info from Auth0
 def get_user_info(token):
     url = f"https://{AUTH0_DOMAIN}/userinfo"
