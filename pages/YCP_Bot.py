@@ -1,7 +1,7 @@
 from openai import OpenAI
 import streamlit as st
 
-st.title("YCP Bot")
+st.markdown("<h1 style='color: darkgreen;'>YCP Bot</h1>", unsafe_allow_html=True)
 
 import streamlit as st
 import requests
