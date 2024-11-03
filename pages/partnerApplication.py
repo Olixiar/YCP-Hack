@@ -82,4 +82,4 @@ if token and isinstance(token, str) and token.strip():
     else:
         st.write("Failed to retrieve user information.")
 else:
-    st.write("Please log in to access application submission.")
+    st.write("Make an account or login in order to use this feature!")
