@@ -87,7 +87,7 @@ if current_value and "access_token=" in current_value:
     if (responseCheck.data == []):
         response = (
             supabase_client.table("users")
-            .insert({"uid": jasonlol["sub"], "role": "Student", "first_name": "Gabe", "last_name": "Baitinger"})
+            .insert({"uid": jasonlol["sub"], "role": "Student", "name": "Namey Namington", "email": jasonlol["email"]})
             .execute()
         )
 
