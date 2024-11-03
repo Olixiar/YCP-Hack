@@ -4,6 +4,9 @@ Here's our first attempt at using data to create a table:
 """
 
 import streamlit as st
+from streamlit_url_fragment import get_fragment
+import supabase
+from supabase import create_client, Client
 
 # --- PAGE SETUP ---
 home = st.Page(
@@ -44,5 +47,7 @@ pg = st.navigation(
         "Account": [account, sign_in],
     }
 )
+
+
 
 pg.run()
