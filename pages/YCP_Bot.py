@@ -6,12 +6,10 @@ st.title("YCP Bot")
 import streamlit as st
 import requests
 import os
-
 # Environment Variables
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
 AUTH0_CLIENT_ID = os.getenv("AUTH0_CLIENT_ID")
 AUTH0_CALLBACK_URL = os.getenv("AUTH0_CALLBACK_URL")
-
 # Function to get user info from Auth0
 def get_user_info(token):
     url = f"https://{AUTH0_DOMAIN}/userinfo"
@@ -31,7 +29,6 @@ def get_user_info(token):
         return None
 
 token = st.session_state.get('jwt')
-
 
 if token and isinstance(token, str) and token.strip():
     user_info = get_user_info(token)
@@ -69,5 +66,3 @@ if token and isinstance(token, str) and token.strip():
         st.write("Failed to retrieve user information.")
 else:
     st.write("Make an account in order to use this feature!")
-
-
