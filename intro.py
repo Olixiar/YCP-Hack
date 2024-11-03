@@ -17,6 +17,11 @@ meet = st.Page(
     title="Meet",
     icon=":material/groups:",
 )
+chatbot = st.Page(
+    "pages/YCP_Bot.py",
+    title="YCP Bot",
+    icon=":material/robot_2:",
+)
 sign_in = st.Page(
     "pages/sign_up.py",
     title="Sign Up",
@@ -40,7 +45,7 @@ account = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Navigation": [home, meet],
+        "Navigation": [home, meet, chatbot],
         "Account Manegment": [account, sign_in, sign_up],
     }
 )
