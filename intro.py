@@ -22,6 +22,11 @@ chatbot = st.Page(
     title="YCP Bot",
     icon=":material/robot_2:",
 )
+partners = st.Page(
+    "pages/partners.py",
+    title="Partners",
+    icon=":material/handshake:",
+)
 sign_in = st.Page(
     "pages/sign_in.py",
     title="Sign In",
