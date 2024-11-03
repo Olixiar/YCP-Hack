@@ -23,14 +23,9 @@ chatbot = st.Page(
     icon=":material/robot_2:",
 )
 sign_in = st.Page(
-    "pages/sign_up.py",
-    title="Sign Up",
-    icon=":material/login:",
-)
-sign_up = st.Page(
     "pages/sign_in.py",
     title="Sign In",
-    icon=":material/how_to_reg:",
+    icon=":material/login:",
 )
 account = st.Page(
     "pages/account.py",
@@ -46,7 +41,7 @@ account = st.Page(
 pg = st.navigation(
     {
         "Navigation": [home, meet, chatbot],
-        "Account Manegment": [account, sign_in, sign_up],
+        "Account": [account, sign_in],
     }
 )
 
