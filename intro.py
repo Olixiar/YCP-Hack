@@ -22,6 +22,11 @@ chatbot = st.Page(
     title="YCP Bot",
     icon=":material/robot_2:",
 )
+partnerApps = st.Page(
+    "pages/partnerApplication.py",
+    title="Partner Application",
+    icon=":material/article_shortcut:",
+)
 partners = st.Page(
     "pages/partners.py",
     title="Partners",
@@ -45,7 +50,7 @@ account = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Navigation": [home, meet, partners, chatbot],
+        "Navigation": [home, meet, partners, partnerApps, chatbot],
         "Account": [account, sign_in],
     }
 )
