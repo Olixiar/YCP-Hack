@@ -27,15 +27,10 @@ partners = st.Page(
     title="Partners",
     icon=":material/handshake:",
 )
-sign_up = st.Page(
-    "pages/sign_up.py",
-    title="Sign Up",
-    icon=":material/login:",
-)
 sign_in = st.Page(
     "pages/sign_in.py",
     title="Sign In",
-    icon=":material/how_to_reg:",
+    icon=":material/login:",
 )
 account = st.Page(
     "pages/account.py",
@@ -50,9 +45,11 @@ account = st.Page(
 # --- NAVIGATION SETUP [WITH SECTIONS]---
 pg = st.navigation(
     {
-        "Navigation": [home, meet, partners, chatbot],
-        "Account Manegment": [account, sign_in, sign_up],
+        "Navigation": [home, meet, chatbot],
+        "Account": [account, sign_in],
     }
 )
+
+
 
 pg.run()
