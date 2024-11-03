@@ -10,6 +10,7 @@ SUPABASE_URL = "https://awlnmyhowvrfcravqihl.supabase.co/"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF3bG5teWhvd3ZyZmNyYXZxaWhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA1Nzc3NDEsImV4cCI6MjA0NjE1Mzc0MX0.B8crTyUGLAjK1r-lzmLZezdExm2LTUmd7i54cYogGKQ"
 AUTH0_DOMAIN = os.getenv("AUTH0_DOMAIN")
 supabase_client = create_client(SUPABASE_URL, SUPABASE_KEY)
+st.title("Prospective Partner Application")
 
 # Function to retrieve user info from Auth0
 def get_user_info(token):
@@ -26,8 +27,6 @@ def get_user_info(token):
 
 # Page for prospective partners
 def prospective_partner_page():
-    st.title("Prospective Partner Application")
-
     st.write(
         "We are excited to explore potential partnerships! "
         "Please provide a brief paragraph explaining why you want to partner with us."
@@ -83,4 +82,4 @@ if token and isinstance(token, str) and token.strip():
     else:
         st.write("Failed to retrieve user information.")
 else:
-    st.write("Please log in to continue.")
+    st.write("Please log in to access application submission.")
